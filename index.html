@@ -97,9 +97,10 @@
 				<!--  Main navigation  -->
 				<ul class="main-nav nav navbar-nav navbar-right">
 					<li><a href="#home">Home</a></li>
-                    <li><a href="#paper">Paper</a></li>
+                    <li><a href="#abstract">Summary</a></li>
+                    <li><a href="#datasets">Datasets</a></li>
                     <li><a href="#video">Video</a></li>
-					<li><a href="#datasets">Datasets</a></li>
+                    <li><a href="#paper">Paper</a></li>
 					<li><a href="https://github.com/TOPO-EPFL/CrossLoc">Code</a></li>
 					<li><a href="#team">Team</a></li>
 					<!-- <li class="has-dropdown"><a href="#blog">Blog</a> -->
@@ -156,16 +157,16 @@
 		<div class="container">
 			<!-- Row -->
 			<div class="row" style="margin: 0px">
-				
-				<!-- service -->
+
+                <!-- service -->
 				<div class="col-md-3 col-sm-6">
-					<div class="service smoothscroll" href="#paper">
-						<div class="service-content service-row-1">																		
-							<i class="fa fa-file-text-o"></i>
-							<h3>Paper</h3>
-                            <p>Main paper and the supplementary materials.</p>
-                            <br>
-                            <a href="#paper">PDF</a>
+					<div class="service smoothscroll" href="#datasets">
+							<div class="service-content service-row-1">
+							<i class="fa fa-database"></i>
+							<h3>Datasets</h3>
+							<p>The CrossLoc datasets include 50K+ annotated images for sim-to-real aerial localization.</p>
+							<a href="#models">Preview and download</a>
+
 						</div>
 					</div>
 				</div>
@@ -174,7 +175,7 @@
 				<!-- service -->
 				<div class="col-md-3 col-sm-6">
 					<div class="service smoothscroll" href="#video">
-						<div class="service-content  service-row-1">																		
+						<div class="service-content  service-row-1">
 							<i class="fa fa-video-camera"></i>
 							<h3>Video</h3>
 							<p>Introduction to CrossLoc datasets and the CrossLoc localization algorithms.</p>
@@ -186,13 +187,13 @@
 
 				<!-- service -->
 				<div class="col-md-3 col-sm-6">
-					<div class="service smoothscroll" href="#datasets">
-							<div class="service-content service-row-1">																		
-							<i class="fa fa-database"></i>
-							<h3>Datasets</h3>
-							<p>The CrossLoc datasets include 50K+ annotated images for sim-to-real aerial localization.</p>
-							<a href="#models">Preview and download</a>
-
+					<div class="service smoothscroll" href="#paper">
+						<div class="service-content service-row-1">																		
+							<i class="fa fa-file-text-o"></i>
+							<h3>Paper</h3>
+                            <p>Main paper and the supplementary materials.</p>
+                            <br>
+                            <a href="#paper">PDF</a>
 						</div>
 					</div>
 				</div>
@@ -326,7 +327,7 @@
                                         <div class="service-content">
                                         <i class="fa fa-area-chart" style="font-size: 2.73em; text-align: center"></i>
                                         <div class="number">
-                                            <h2 class="value">390</h2>
+                                            <h2 class="value">270</h2>
 			                            </div>
                                         <h3>Hectares</h3>
                                     </div>
@@ -425,8 +426,11 @@
                     <img width="100%" src="./img_crossloc/topo-datagen_output_sample.png" alt="" class="center">
 				</p>
 				</div>
-				The TOPO-DataGen workflow can be used to improve the training of most visual localization networks,
+
+                <div class="col-sm-12">
+                    The TOPO-DataGen workflow can be used to improve the training of most visual localization networks,
                     including both the image-based methods (by cross-domain data augmentation) and the structure-based methods (by multi-modal visual data and cross-modal representations).
+                </div>
 
 			</div>
 			<!-- /Row -->
@@ -517,7 +521,7 @@
                 <div class="col-sm-12">
                     <br> <br>
                     <div class="bibtex text-center">
-						<h2 class="title">Bibtex</h2>
+						<h2 class="title">BibTex</h2>
                     </div>
                     <div class="col text-left">
                     <pre><code>@article{yan2021crossloc,
