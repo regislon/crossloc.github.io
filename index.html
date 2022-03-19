@@ -163,7 +163,7 @@
 						<div class="service-content service-row-1">																		
 							<i class="fa fa-file-text-o"></i>
 							<h3>Paper</h3>
-                            <p>Main paper and the supplementary materials. </p>
+                            <p>Main paper and the supplementary materials.</p>
                             <br>
                             <a href="#paper">PDF</a>
 						</div>
@@ -271,18 +271,18 @@
                         <br>
 						<br>
                         <br>
-						<strong>2) <u> CrossLoc localization</u> </strong>: a cross-modal visual representation learning method via self-supervision for absolute localization.
+						<strong>2) <u> CrossLoc localization</u></strong>: a cross-modal visual representation learning method via self-supervision for absolute localization.
 						<br>
-                        CrossLoc learns to localize the query image by predicting its scene coordinates using a set of cross-modal encoders, followed by camera pose estimation using a PnP solver.
+                        The CrossLoc learns to localize the query image by predicting its scene coordinates using a set of cross-modal encoders, followed by camera pose estimation using a PnP solver.
                         Similar to self-supervised learning, it leverages data structure to create additional supervisory signals to enhance learning.
 
                         Specifically, it makes use of the <em>coordinate-depth-normal geometric hierarchy</em> for self-supervision:
-                        from the 3D scene coordinate labels, one could compute accurate 6D camera pose and subsequently, compute
-                        the depth, and surface normals <em>without any external labels</em>.
-                        We argue that the tasks of coordinate-depth-normal regression are geometrically highly-related and the aggregated cross-modal representations
+                        from the 3D scene coordinate labels, one could compute accurate 6D camera pose and subsequently compute
+                        the depth and surface normals <em>without any external labels</em>.
+                        We argue that the tasks of coordinate-depth-normal regression are geometrically highly related. The aggregated cross-modal representations
                         could be used to enhance the final task of coordinate regression.
                         <br>
-                        See our <a href="https://github.com/TOPO-EPFL/CrossLoc">CrossLoc localization code</a> for training code, pretrained models and baseline implementations.
+                        See our <a href="https://github.com/TOPO-EPFL/CrossLoc">CrossLoc localization code</a> for training code, pretrained models, and baseline implementations.
 
 
                         <div id="datasets">
@@ -360,7 +360,7 @@
                         datasets statistics and how to download and setup.
                         <br>
                         <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
-                        All 7k+ real images are <strong>accurately geo-referenced</strong> using a professional drone, numerous ground control points and GNSS base.
+                        All 7k+ real images are <strong>accurately geo-referenced</strong> using a professional drone, numerous ground control points, and a GNSS base.
                         <br>
                         <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
                         All real images have matching synthetic RGB images with a validated positioning accuracy at <strong>cm-level</strong>.
