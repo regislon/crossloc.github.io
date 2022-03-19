@@ -124,11 +124,6 @@
 						<div class="home-content">
 							<h2 class="white-text">CrossLoc: Scalable Aerial Localization Assisted by Multimodal Synthetic Data</h2><br>
 							<h4 class="white-text">CVPR 2022</h4>
-							<!--h2 class="white-text">(<u>X-TAC</u>)</h2-->
-							<!--<h3 class="white-text">(Under Development. Please check after March 12 for live demo & final content)</h3>	-->
-
-
-
 
 							<a class="white-text" href="https://qiyan98.github.io/">Qi Yan</a><span style="opacity:0.7">,</span>
 							<a class="white-text" href="https://jianhao-zheng.github.io/">Jianhao Zheng</a><span style="opacity:0.7">,</span>
@@ -137,8 +132,6 @@
 							<a class="white-text" href="https://people.epfl.ch/iordan.doytchinov?lang=en">Iordan Doytchinov</a><span style="opacity:0.7"></span>
 							<br>
 							<br>
-
-
 
 							<br>
                             <button id="learnmore" class="outline-btn roundedbutton" > <a class="white-text" href="#abstract">Learn more</a>  </button>
@@ -160,33 +153,6 @@
 			
 		<!-- Container -->
 		<div class="container">
-			<div class="row" style="margin: 0px">
-
-				
-
-				<!-- service -->
-				<div class="col-md-12 col-sm-6">
-					<div class="service">
-						<div class="service-content service-row-2">																		
-							
-						<h3>Live Demo</h3>
-												
-
-						<p>
-						Upload an image to see results of learning with Cross-Task Consistency versus various baselines for different vision tasks.</p>
-						<br>
-						<a href="./demo"> <img width="6%" src="./img/icon-demo1.png" > </a>
-						
-						</div>
-						
-						
-						
-					</div>
-				</div>
-				<!-- /service -->				
-				
-			</div>
-			
 			<!-- Row -->
 			<div class="row" style="margin: 0px">
 				
@@ -196,8 +162,9 @@
 						<div class="service-content service-row-1">																		
 							<i class="fa fa-file-text-o"></i>
 							<h3>Paper</h3>
-							<p>The paper and supplementary material.</p>
-							<a href="#paper">PDF</a>																					
+                            <p>Main paper and the supplementary materials. </p>
+                            <br>
+                            <a href="#paper">PDF</a>
 						</div>
 					</div>
 				</div>
@@ -205,12 +172,12 @@
 
 				<!-- service -->
 				<div class="col-md-3 col-sm-6">
-					<div class="service smoothscroll" href="#transfers"  onclick="window.location.href='./visuals'">
+					<div class="service smoothscroll" href="#video">
 						<div class="service-content  service-row-1">																		
 							<i class="fa fa-video-camera"></i>
-							<h3>Visualization</h3>
-							<p>Examine the visualization of consistencies across prediction tasks.</p>
-							<a href="./visuals">Visualization Page</a>							
+							<h3>Video</h3>
+							<p>Introduction to CrossLoc datasets and the CrossLoc localization algorithms.</p>
+							<a href="#sample">Visualization</a>
 						</div>
 					</div>
 				</div>
@@ -218,12 +185,12 @@
 
 				<!-- service -->
 				<div class="col-md-3 col-sm-6">
-					<div class="service smoothscroll" href="#models">
+					<div class="service smoothscroll" href="#datasets">
 							<div class="service-content service-row-1">																		
-							<i class="fa fa-cogs"></i>
-							<h3>Models</h3>
-							<p>Download the trained consistency models and baselines.</p>
-							<a href="#models">Pretrained Models</a>							
+							<i class="fa fa-database"></i>
+							<h3>Datasets</h3>
+							<p>The CrossLoc datasets include 50K+ annotated images for sim-to-real aerial localization.</p>
+							<a href="#models">Preview and download</a>
 
 						</div>
 					</div>
@@ -232,13 +199,12 @@
 
 				<!-- service -->
 				<div class="col-md-3 col-sm-6">
-					<div class="service smoothscroll" href="https://github.com/EPFL-VILAB/XTConsistency">
+					<div class="service smoothscroll" href="https://github.com/TOPO-EPFL/CrossLoc" onclick="window.location.href='https://github.com/TOPO-EPFL/CrossLoc'">
 							<div class="service-content service-row-1">
 							<i class="fa fa-github"></i>
 							<h3>Code</h3>
-							<p>The code for training and testing consistency models and baselines.</p>
-							<a href="https://github.com/EPFL-VILAB/XTConsistency">Get started</a>
-
+                            <p>The code for training and testing our CrossLoc models and baselines.</p>
+							<a href="https://github.com/TOPO-EPFL/CrossLoc">Get started</a>
 						</div>
 					</div>
 				</div>
@@ -257,8 +223,6 @@
 
 
 
-
-
 	<!-- Abstract -->
 	<div id="abstract" class="section sm-padding">
 
@@ -270,15 +234,24 @@
 
 				<!-- Section header -->
 				<div class="section-header text-center">
-					<h2 class="title">Quick Summary</h2>
-					<u><strong>What</strong></u> is consistency, <u><strong>why</strong></u> is it important, and <u><strong>how</strong></u> do we use it?
+					<h2 class="title">Abstract</h2>
+                    We present a visual localization system that learns to
+                    <strong><u>estimate camera poses in the real world with the help of synthetic data</u> </strong>.
 				</div>
-				
+
+                <u><strong></strong></u>
+                Despite significant progress in recent years, most learning-based approaches to visual localization target at a single domain and require a dense database of geo-tagged images to function well.
+                To mitigate the data scarcity issue and improve the scalability of the neural localization models, we introduce <u><strong>TOPO-DataGen</strong></u>, a versatile synthetic data generation tool that traverses smoothly between the real and virtual world, hinged on the geographic camera viewpoint.
+                New large-scale <u><strong>sim-to-real benchmark datasets</strong></u> are proposed to showcase and evaluate the utility of the said synthetic data.
+                Our experiments reveal that synthetic data generically enhances the neural network performance on real data.
+                Furthermore, we introduce <u><strong>CrossLoc</strong></u>, a cross-modal visual representation learning approach to pose estimation that makes full use of the scene coordinate ground truth via self-supervision.
+                Without any extra data, CrossLoc significantly outperforms the state-of-the-art methods and achieves substantially higher real-data sample efficiency.
+
 				<!-- /Section header -->
 				<div class="abstract-body col-md-12">
 					<p> 
 						<div class="figure row">
-						<img width="80%" src="./img_consistency/pull_april22_3.jpg" alt="" class="center">
+						<img width="80%" src="./img_crossloc/pull_figure.png" alt="" class="center">
 						<p class='col-sm-10 col-sm-offset-1' style='text-align: justify;'>
 							<strong>Cross-Task Consistent Learning.</strong> 
 							The lower and upper rows show the results of the baseline (independent learning) and learning with cross-task consistency. The latter yields higher quality (especially at hard-to-predict fine-grained details) and more consistent predictions. Red boxes provide magnifications.
@@ -482,82 +455,6 @@
 	</div>
 	<!-- /Sample Results -->
 
-
-
-
-	<!-- Energy -->
-	<div id="energy" class="section sm-padding">
-
-		<!-- Container -->
-		<div class="container">
-
-			<!-- Row -->
-			<div class="row">
-
-				<!-- Section header -->
-				<div class="section-header text-center">
-					<h2 class="title">Consistency Energy</h2>
-				</div>
-				
-				<!-- /Section header -->
-				<div class="abstract-body col-md-12">
-					<p> 
-						We quantify the amount of inconsistency in a prediction made for a query using an energy-based quantity called <strong>Consistency Energy</strong>. It is defined to be the standardized average of pairwise inconsistencies. This is also equivalent to the <strong>sample variance</strong> of the predictions. The consistency energy is an <strong>intrinsic quantity of the system</strong>, as it requires no ground truth and can be computed without any supervision. As shown below, the energy strongly correlates with supervised error and distributions shifts. This suggests the energy can be adopted as an unsuervised confidence metric.
-
-						
-					</p>
-
-                                        <div class="col-sm-6">
-					<div class="figure">
-
-						<img width="60%" src="./img_consistency/svg/all_new.svg" alt="" class="center">
-                                                <p> Empirical analyses of consistency energy.</p>
-					</div>
-                                        </div>
-          
-                                        <div class="col-sm-6">
-                                        <div class="figure">                                                                                                                                                                                              <iframe width="480" height="249" src="https://www.youtube.com/embed/DEiSWx7-MX4?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;playlist=DEiSWx7-MX4&amp;modestbranding=1&amp;autoplay=1&amp;mute=1&amp;start=1&amp;vq=hd1080" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>                                                                                                                                                                                                                             <p> The video shows the energy vs two continuous domain shifts (JPEG compression, Blur). The domain shift distortions are applied on the frames. The energy turns out to be an unsupervised indicator of domain shift and generally correlates with the magnitude of shift.</p>
-                                       </div>
-                                       </div>
-				
-				</div>		
-
-
-			</div>
-			<!-- /Row -->
-
-		</div>
-		<!-- /Container -->
-
-	</div>
-	<!-- /Abstract -->
-
-	
-			
-
-	<!-- Transfers -->
-	<div id="transfers" class="section sm-padding">
-		<div class="container">
-			<div class="row">
-				<div class="row">
-					<div class="section-header text-center">
-						<h2 class="title">Interactive Visualizations</h2>
-					</div>
-					<p>To convey a more tangible understanding of learning with cross-task consistency constraints versus baselines, we compare the results of various configurations frame-by-frame on a youtube video. Visit the <a href="./visuals">visualizations page</a> to specify the comparison configuration of your choice and compare the performance.</p>
-					<!--div class="figure">
-						<video width="100%" height="464" playsinline autoplay center loop muted class="video-bg" id="video-bg" poster="./loading.gif">
-							<source src="./assets/videos/consistency3.mp4" type="video/mp4" alt="HTML5 background video">
-						</video>					
-					</div-->
-					<br>
-					<button class="main-btn centering" onclick="window.location.href='./visuals';"><strong>View Interactive Visualizations</strong></button>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<!-- /Transfers -->
-			
 	<!-- Pretrained -->
 	<div id="models" class="section sm-padding">
 
