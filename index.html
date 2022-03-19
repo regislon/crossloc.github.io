@@ -214,8 +214,6 @@
 			</div>
 			<!-- /Row -->
 
-			<!-- /Row -->			
-
 		</div>
 		<!-- /Container -->
 	</div>	
@@ -253,72 +251,130 @@
 						<div class="figure row">
 						<img width="80%" src="./img_crossloc/pull_figure.png" alt="" class="center">
 						<p class='col-sm-10 col-sm-offset-1' style='text-align: justify;'>
-							<strong>Cross-Task Consistent Learning.</strong> 
-							The lower and upper rows show the results of the baseline (independent learning) and learning with cross-task consistency. The latter yields higher quality (especially at hard-to-predict fine-grained details) and more consistent predictions. Red boxes provide magnifications.
+                            <strong>Left.</strong> The proposed <u><strong>TOPO-DataGen</strong></u> workflow generates multimodal synthetic datasets over large scales using off-the-shelf geodata.
+                            <strong>Right.</strong> We present <u><strong>CrossLoc</strong></u>, a cross-modal visual representation learning method for absolute localization.
+                            It learns to predict scene coordinates via self-supervised geometric tasks and external labels such as semantics if available.
 						</p>
 						</div>
 						<br>
 
-						<strong>1) <u><b>What</b> is consistency?</u> </strong>
+                        Our main contributions are threefold:
+                        <br>
+						<strong>1) <u>TOPO-DataGen</u></strong>: an open-source multimodal synthetic data generation tool tailored to aerial scenes.
 						<br>
-						Suppose an object detector detects a ball in a particular region of an image, while a depth estimator returns a flat surface for the same region. This presents an issue -- at least one of them has to be wrong, because they are <strong>inconsistent</strong>. More concretely, the first prediction domain (objects) and the second prediction domain (depth) are not independent and consequently enforce some constraints on each other, often referred to as <strong>consistency constraints</strong>. 
-						<br>
-						<br>
-						<strong>2) <u> <b>Why</b> is it important to consider consistency in learning? </u> </strong>
-						<br>
-						First, desired learning tasks are usually predictions of different aspects of one underlying reality (the scene that underlies an image). Hence inconsistency among predictions implies contradiction and is inherently undesirable. Second, consistency constraints are informative and can be used to better fit the data or lower the sample complexity. Also, they may reduce the tendency of neural networks to learn "surface statistics'' (superficial cues), by enforcing constraints rooted in different physical or geometric rules. This is empirically supported by the improved generalization of models when trained with consistency constraints.												
-                                                <br>
-                                                <br>
-                                                The video below demonstrates the impact of disregarding consistency in learning as well as the effectiveness of augmenting learning with cross-task consistency constraints. Each window shows surface normals predicted out of a domain itself predicted out of the image (i.e. image→{prediction domain X}→surface normals). The normals in the upper row (learning without consistency) are poor and different/inconsistent with each other for the same underlying image. The lower row shows the same except when learning image→{prediction domain X} was augmented with cross-task consistency constraints with normals. Inferred surface normals look better and more similar to each other regardless of the middle prediction domain, which demonstrates all of the middle domains were successfully made cross-task consistent w.r.t to normals. In the paper, we further extend this concept to many arbitrary domains with arbitrary inference path lengths, using a general and fully computational learning framework.  
-                                                </p>
-												<div class="figure" style="text-align:center;">
-													<h4 class="">(Note: Videos on page best seen in HD)</h4>
-	                                                <iframe width="1022" height="359" src="https://www.youtube.com/embed/W4F1Q_MM2Rw?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;playlist=W4F1Q_MM2Rw&amp;modestbranding=1&amp;autoplay=1&amp;mute=1&amp;start=0&amp;vq=hd1080" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-                                                </div>    
+                        It takes common geo-data as inputs and outputs diverse synthetic visual data such as 2D image-3D geometry-semantics-camera pose.
+                        The rendering engine is developed upon <a href="https://cesium.com/platform/cesiumjs/">CesiumJS</a>.
+                        See our <a href="https://github.com/TOPO-EPFL/TOPO-DataGen">TOPO-DataGen code</a> for details and
+                        feel free to try the <a href="https://github.com/TOPO-EPFL/TOPO-DataGen#get-started">demo</a> to generate synthetic data in Genève.
 
 
-                                                <p>
+                        <br>
 						<br>
+                        <br>
+						<strong>2) <u> CrossLoc localization</u> </strong>: a cross-modal visual representation learning method via self-supervision for absolute localization.
 						<br>
-						<strong>3) <u> <b>How</b> can we design a learning system that makes consistent predictions? </u> </strong>
-						<br>
-						This paper proposes a method which, given an arbitrary dictionary of tasks, augments the learning objective with explicit constraints for cross-task consistency. The constraints are learned from data rather than apriori given relationships. For instance, it is not necessary to encode that surface normals are the 3D derivative of depth or occlusion edges are discontinuities in depth. This makes the method applicable to any pairs of tasks as long as they are not statistically independent; even if their analytical relationship is unknown, hard to program, or non-differentiable. 
-						<br>
-						<br>
-						The primary concept behind the method is <emph>inference-path invariance</emph>. That is, the result of inferring an output domain from an input domain should be the same, regardless of the intermediate domains mediating the inference. When inference paths with the same endpoints, but different intermediate domains, yield similar results, this implies the intermediate domain predictions did not conflict as far as the output was concerned. We apply this concept over paths in a graph of tasks, where the nodes and edges are prediction domains and neural network mappings between them, respectively. Satisfying this invariance constraint over <emph>all</emph> paths in the graph ensures the predictions for all domains are in global cross-task agreement.
-						<br>
-						<br>
+                        CrossLoc learns to localize the query image by predicting its scene coordinates using a set of cross-modal encoders, followed by camera pose estimation using a PnP solver.
+                        Similar to self-supervised learning, it leverages data structure to create additional supervisory signals to enhance learning.
+
+                        Specifically, it makes use of the <em>coordinate-depth-normal geometric hierarchy</em> for self-supervision:
+                        from the 3D scene coordinate labels, one could compute accurate 6D camera pose and subsequently, compute
+                        the depth, and surface normals <em>without any external labels</em>.
+                        We argue that the tasks of coordinate-depth-normal regression are geometrically highly-related and the aggregated cross-modal representations
+                        could be used to enhance the final task of coordinate regression.
+                        <br>
+                        See our <a href="https://github.com/TOPO-EPFL/CrossLoc">CrossLoc localization code</a> for training code, pretrained models and baseline implementations.
 
 
+                        <div id="datasets">
+                        <br>
+                        <br>
+						<strong>3) <u>CrossLoc Benchmark Datasets</u></strong>: large-scale benchmark datasets for sim-to-real visual localization,
+                        including synthetic and real images with 3D and semantic labels on urban and natural sites.
+                        <br>
+                        <!-- Row -->
+                            <!-- service-static -->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="service-static">
+                                        <div class="service-content">
+                                        <i class="fa fa-paint-brush" style="font-size: 2.73em; text-align: center"></i>
+                                        <div class="number">
+                                            <h2 class="value">50k+</h2>
+			                            </div>
+                                        <h3>Synthetic Images</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /service-static -->
 
-						
-					</p>
+                            <!-- service-static -->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="service-static">
+                                        <div class="service-content">
+                                        <i class="fa fa-camera" style="font-size: 2.73em; text-align: center"></i>
+                                        <div class="number">
+                                            <h2 class="value">7k+</h2>
+			                            </div>
+                                        <h3>Real Images</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /service-static -->
 
-					<div class="figure row">
-						<img width="80%" src="./img_consistency/graph_overview_april15_1.jpg" alt=""  class="center">
-						<p class='col-sm-10 col-sm-offset-1' style='text-align: justify;'><strong>Enforcing cross-task consistency.</strong> <strong>(a)</strong> shows the typical multitask setup where predictors x→y1 and x→y2 are trained without a notation of consistency (either completely independently or with a shared encoder and dedicated decoders). <strong>(b)</strong> depicts the elementary <strong>triangle consistency constraint</strong> where the prediction x→y1 is enforced to be consistent with x→y2 using a function that relates y1 to y2 (i.e. y1→y2). <strong>(c)</strong> shows how the triangle unit from (b) can be an element of a larger system of domains. Finally, <strong>(d)</strong> illustrates the generalized case where in the larger system of domains, consistency can be enforced using invariance along arbitrary paths, as long as their endpoints are the same (here the blue and green paths). This is the general concept behind "inference-path invariance". The triangle in (b) is the smallest unit of such paths.
-					</div>
+                            <!-- service-static -->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="service-static">
+                                        <div class="service-content">
+                                        <i class="fa fa-area-chart" style="font-size: 2.73em; text-align: center"></i>
+                                        <div class="number">
+                                            <h2 class="value">390</h2>
+			                            </div>
+                                        <h3>Hectares</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /service-static -->
 
-						The figure below shows the effect of training with and without cross-task consistency, for networks trained to do surface normal predictions: 	
-						<br>
-						<br>					
-		
-					<div class="figure row">
-						<img width="80%" src="./img_consistency/fig_method_results_april17_1.jpg" alt="" class="center">
-						<p class='col-sm-10 col-sm-offset-1' style='text-align: justify;'><strong>Learning with and without cross-task consistency shown for a sample query.</strong> Using the notation x→y1→Y, here x is RGB image, y1 is surface normals, and five domains in Y are reshading, 3D curvature, texture edges (Sobel filter), depth, and occlusion edges. 
-						<strong>Top row</strong> shows the results of standard training of x→y1. After convergence of training, the predicted normals (y1) are projected onto other domains (Y) which reveal various inaccuracies. This demonstrates such cross-task projections y1→Y can provide additional cues to training x→y1.
-						<strong>Middle row</strong> shows the results of consistent training of x→y1 by leveraging y1→Y in the loss. The predicted normals are notably improved, especially in hard to predict <strong>fine-grained details</strong> (zoom into the yellow markers). 
-						<strong>Bottom row</strong> provides the ground truth.
-						</p>
-					</div>
+                            <!-- service-static -->
+                            <div class="col-md-3 col-sm-6">
+                                <div class="service-static">
+                                        <div class="service-content">
+                                        <i class="fa fa-cogs" style="font-size: 2.73em; text-align: center"></i>
+                                        <div class="number">
+                                            <h2 class="value">6+</h2>
+			                            </div>
+                                        <h3>Modalities</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /service-static -->
+                        </div>
+                        <!-- /Row -->
 
-						<div class="figure" style="text-align:center">
-							<h4 class="">(Note: Video best seen in HD)</h4>
-							<iframe width="1022" height="311" src="https://www.youtube.com/embed/SywH7IbKn9E?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;playlist=SywH7IbKn9E&amp;modestbranding=1&amp;autoplay=1&amp;mute=1&amp;start=0&amp;vq=hd1080" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>                                           
-							<p> This video demonstrates the same results as the above figure, but over a video and for depth prediction. The video is processed <u>frame-by-frame</u>.</p>
-						</div>
-                
-	
+                        </p>
+                        <div class="figure" style="text-align:center;">
+                            <h4 class="">(Note: quality may be compromised due to GIF compression)</h4>
+                            <img width="75%" src="img_crossloc/urbanscape_sample.gif"></img>
+                        </div>
+                        We introduce two large-scale sim-to-real benchmark datasets to exemplify the utility of the <strong><u>TOPO-DataGen</u></strong>.
+                        See our <a href="https://github.com/TOPO-EPFL/CrossLoc-Benchmark-Datasets">CrossLoc Benchmark Datasets repo</a> for details regarding
+                        datasets statistics and how to download and setup.
+                        <br>
+                        <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
+                        All 7k+ real images are <strong>accurately geo-referenced</strong> using a professional drone, numerous ground control points and GNSS base.
+                        <br>
+                        <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
+                        All real images have matching synthetic RGB images with a validated positioning accuracy at <strong>cm-level</strong>.
+                        <br>
+                        <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
+                        Most generated 3D labels have a reprojection error of no more than <strong>2 pixels</strong>.
+                        <br>
+                        <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
+                        All synthetic data is created using the <strong>fully open-sourced geo-data</strong> from the Swiss government <a href="https://www.swisstopo.admin.ch/en/geodata.html">swisstopo</a>.
+                        <br>
+                        <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
+                        Carefully calibrated camera intrinsic parameters and the 6D camera poses are provided.
+
+                        </div>
 				</div>			
 
 
