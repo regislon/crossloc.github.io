@@ -166,7 +166,6 @@
 							<h3>Datasets</h3>
 							<p>The CrossLoc datasets include 50K+ annotated images for sim-to-real aerial localization.</p>
 							<a href="#models">Preview and download</a>
-
 						</div>
 					</div>
 				</div>
@@ -205,7 +204,7 @@
 							<div class="service-content service-row-1">
 							<i class="fa fa-github"></i>
 							<h3>Code</h3>
-                            <p>The code for training and testing our CrossLoc models and baselines.</p>
+                            <p>The code for training and testing the CrossLoc models and baselines.</p>
 							<a href="https://github.com/TOPO-EPFL/CrossLoc">Get started</a>
 						</div>
 					</div>
@@ -236,10 +235,9 @@
 				<div class="section-header text-center">
 					<h2 class="title">Summary</h2>
                     We present a visual localization system that learns to
-                    <strong><u>estimate camera poses in the real world with the help of synthetic data</u> </strong>.
+                    <strong><u>estimate camera poses in the real world with the help of synthetic data</u></strong>.
 				</div>
 
-                <u><strong></strong></u>
                 Despite significant progress in recent years, most learning-based approaches to visual localization target at a single domain and require a dense database of geo-tagged images to function well.
                 To mitigate the data scarcity issue and improve the scalability of the neural localization models, we introduce <u><strong>TOPO-DataGen</strong></u>, a versatile synthetic data generation tool that traverses smoothly between the real and virtual world, hinged on the geographic camera viewpoint.
                 New large-scale <u><strong>sim-to-real benchmark datasets</strong></u> are proposed to showcase and evaluate the utility of the said synthetic data.
@@ -265,13 +263,43 @@
 						<br>
                         It takes common geo-data as inputs and outputs diverse synthetic visual data such as 2D image-3D geometry-semantics-camera pose.
                         The rendering engine is developed upon <a href="https://cesium.com/platform/cesiumjs/">CesiumJS</a>.
-                        See our <a href="https://github.com/TOPO-EPFL/TOPO-DataGen">TOPO-DataGen code</a> for details and
+                        See the <a href="https://github.com/TOPO-EPFL/TOPO-DataGen">TOPO-DataGen code</a> for details and
                         feel free to try the <a href="https://github.com/TOPO-EPFL/TOPO-DataGen#get-started">demo</a> to generate synthetic data in Genève.
 
+                        <!-- Section header -->
+                        <div class='row'>
+                            <br>
+                            <div class="col-sm-4">
+                            <p>
+                                <strong>TOPO-DataGen is generically useful for enhancing aerial visual localization networks.</strong>
+                                The proposed data generation workflow outputs both 2D RGB images and the associated 3D labels such as the pixel-wise
+                                scene coordinates.
+                                It has the following advantages:
+                                <br>
+                                <i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
+                                Obtaining dense and accurate <strong>2D-3D correspondences</strong> without much engineering efforts, unlike the structure-from-motion.
+                                <br>
+                                <i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
+                                Seamless <strong>traversing between the real and virtual world</strong> hinged on the camera viewpoint.
+                                <br>
+                                <i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
+                                Work for both <strong>image-based methods</strong> such as absolute pose regression and <strong>structure-based methods</strong> that require 3D labels.
+                            </p>
+                            </div>
 
-                        <br>
-						<br>
-                        <br>
+                            <div class="col-sm-8">
+                            <p>
+                                <img width="100%" src="./img_crossloc/topo-datagen_output_sample.png" alt="" class="center">
+                            </p>
+                            </div>
+
+                            <div class="col-sm-12">
+                                The TOPO-DataGen workflow can be used to improve the training of most visual localization networks,
+                                including both the image-based methods (by cross-domain data augmentation) and the structure-based methods (by multi-modal visual data and cross-modal representations).
+                            </div>
+                        </div>
+
+                        <br> <br>
 						<strong>2) <u> CrossLoc localization</u></strong>: a cross-modal visual representation learning method via self-supervision for absolute localization.
 						<br>
                         The CrossLoc learns to localize the query image by predicting its scene coordinates using a set of cross-modal encoders, followed by camera pose estimation using a PnP solver.
@@ -280,10 +308,10 @@
                         Specifically, it makes use of the <em>coordinate-depth-normal geometric hierarchy</em> for self-supervision:
                         from the 3D scene coordinate labels, one could compute accurate 6D camera pose and subsequently compute
                         the depth and surface normals <em>without any external labels</em>.
-                        We argue that the tasks of coordinate-depth-normal regression are geometrically highly related. The aggregated cross-modal representations
+                        It's observed that the tasks of coordinate-depth-normal regression are geometrically highly related. The aggregated cross-modal representations
                         could be used to enhance the final task of coordinate regression.
                         <br>
-                        See our <a href="https://github.com/TOPO-EPFL/CrossLoc">CrossLoc localization code</a> for training code, pretrained models, and baseline implementations.
+                        See the <a href="https://github.com/TOPO-EPFL/CrossLoc">CrossLoc localization code</a> for training code, pretrained models, and baseline implementations.
 
 
                         <div id="datasets">
@@ -358,7 +386,7 @@
                         </div>
                         We introduce two large-scale sim-to-real benchmark datasets to exemplify the utility of the <strong><u>TOPO-DataGen</u></strong>.
                         Please visit the <a href="https://doi.org/10.5061/dryad.mgqnk991c">CrossLoc Benchmark Datasets</a> page hosted by Drayd for download.
-                        See our <a href="https://github.com/TOPO-EPFL/CrossLoc-Benchmark-Datasets">GitHub repo</a> for other dataset details and how to setup. 
+                        See the <a href="https://github.com/TOPO-EPFL/CrossLoc-Benchmark-Datasets">GitHub repo</a> for other dataset details and how to setup.
                         <br>
                         <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
                         All 7k+ real images are <strong>accurately geo-referenced</strong> using a professional drone, numerous ground control points, and a GNSS base.
@@ -382,63 +410,7 @@
 		</div>
 		<!-- /Container -->
 	</div>
-	
-	<!-- /Summary -->
 
-	<!-- Tryit -->
-	<div id="try_it" class="section md- padding bg-grey">
-
-		<!-- Container -->
-		<div class="container">
-
-			<!-- Row -->
-			<div class="row">
-
-				<!-- Section header -->
-                <br>
-				<div class="section-header text-center">
-					<h2 class="title">What is the use of our TOPO-DataGen?</h2>
-					<u><strong>TOPO-DataGen is generically useful for enhancing aerial visual localization networks.</strong></u>
-				</div>
-
-				<div class='row'>
-				<div class="col-sm-4">
-				<p>
-                    The proposed data generation workflow outputs both 2D RGB images and the associated 3D labels such as the pixel-wise
-                    scene coordinates.
-                    It has the following advantages:
-                    <br>
-                    <i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
-                    Obtaining dense and accurate <strong>2D-3D correspondences</strong> without much engineering efforts, unlike the structure-from-motion.
-                    <br>
-                    <br>
-                    <i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
-                    Seamless <strong>traversing between the real and virtual world</strong> hinged on the camera viewpoint.
-                    <br>
-                    <br>
-                    <i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
-                    Work for both <strong>image-based methods</strong> such as absolute pose regression and <strong>structure-based methods</strong> that require 3D labels.
-				</p>
-				</div>
-
-                <div class="col-sm-8">
-				<p>
-                    <img width="100%" src="./img_crossloc/topo-datagen_output_sample.png" alt="" class="center">
-				</p>
-				</div>
-
-                <div class="col-sm-12">
-                    The TOPO-DataGen workflow can be used to improve the training of most visual localization networks,
-                    including both the image-based methods (by cross-domain data augmentation) and the structure-based methods (by multi-modal visual data and cross-modal representations).
-                </div>
-
-			</div>
-			<!-- /Row -->
-
-		</div>
-		<!-- /Tryit -->
-
-	</div>
 	<!-- /Summary -->
 
     <!-- Sample Results -->
