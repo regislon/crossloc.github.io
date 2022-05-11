@@ -37,7 +37,9 @@
     width:100%;
     height:100%;
     z-index:0;
-    background-color: #000000;
+    background: #FFFFFF no-repeat center;
+    /*background-color: #000000;*/
+    background-size: auto;
 }
 
 
@@ -114,6 +116,7 @@ header {
 
 .service {
     position: relative;
+    height: 180px;
     padding: 13px 10px 10px 13px;
     margin: 10px 0px;
     border: 1px solid #DDD;
@@ -169,6 +172,7 @@ header {
 .service-content {
     z-index: 11;
 }
+
 
 
 .service::after {

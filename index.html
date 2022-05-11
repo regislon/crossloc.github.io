@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <!-- <link rel="shortcut icon" type="image/x-icon" href="triangle.ico"> -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="triangle.ico"> -->
 	<title>CrossLoc | Scalable Aerial Localization Assisted by Multimodal Synthetic Data</title>
 	<meta name="keywords" content="visual localization, sim-to-real, benchmark datasets, multitask, computer vision, vision, EPFL, Swiss Federal Institute of Technology, Lausanne">
 	<meta name="description" content="Scalable Aerial Localization Assisted by Multimodal Synthetic Data EPFL. We propose new perspectives on reducing the need for real data for aerial localization leveraging synthetic data and cross-modal visual representations.">
-	<!--meta name="google-site-verification" content="tBb4aimY-zxYS_s_z86g6faxMX2G_I_Wp_kzbF3U_RM" />--
+	<!--meta name="google-site-verification" content="tBb4aimY-zxYS_s_z86g6faxMX2G_I_Wp_kzbF3U_RM" /-->
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
@@ -73,7 +73,7 @@
 		<!-- /Background Image -->
 
 		<!-- Nav -->
-		<nav id="nav" class="navbar nav-transparent">
+		<nav id="nav" class="navbar fixed-nav">
 			<div class="container">
 
 				<div class="navbar-header">
@@ -97,7 +97,7 @@
 				<!--  Main navigation  -->
 				<ul class="main-nav nav navbar-nav navbar-right">
 					<li><a href="#home">Home</a></li>
-                    <li><a href="#abstract">Summary</a></li>
+                    <li><a href="#abstract">abstract</a></li>
                     <li><a href="#datasets">Datasets</a></li>
                     <li><a href="#video">Video</a></li>
                     <li><a href="#paper">Paper</a></li>
@@ -124,25 +124,34 @@
 					<!-- home content -->
 					<div class="col-md-10 col-md-offset-1">
 						<div class="home-content">
-							<h2 class="white-text">CrossLoc: Scalable Aerial Localization Assisted by Multimodal Synthetic Data</h2><br>
-							<h4 class="white-text">CVPR 2022</h4>
+							<br><br><br><br><br><br><br><br>
+							<h2 class="black-text">CrossLoc: Scalable Aerial Localization Assisted by Multimodal Synthetic Data</h2><br>
+							<h4 class="black-text">CVPR 2022</h4>
 
-							<a class="white-text" href="https://qiyan98.github.io/">Qi Yan</a><span style="opacity:0.7">,</span>
-							<a class="white-text" href="https://jianhao-zheng.github.io/">Jianhao Zheng</a><span style="opacity:0.7">,</span>
-							<a class="white-text" href="https://people.epfl.ch/simon.reding/?lang=en">Simon Reding</a><span style="opacity:0.7">,</span>
-							<a class="white-text" href="https://people.epfl.ch/shanci.li/?lang=en">Shanci Li</a><span style="opacity:0.7">,</span>
-							<a class="white-text" href="https://people.epfl.ch/iordan.doytchinov?lang=en">Iordan Doytchinov</a><span style="opacity:0.7"></span>
-							<br>
-							<br>
+							<a class="black-text" href="https://qiyan98.github.io/">Qi Yan</a><span style="opacity:0.7">,</span>
+							<a class="black-text" href="https://jianhao-zheng.github.io/">Jianhao Zheng</a><span style="opacity:0.7">,</span>
+							<a class="black-text" href="https://people.epfl.ch/simon.reding/?lang=en">Simon Reding</a><span style="opacity:0.7">,</span>
+							<a class="black-text" href="https://people.epfl.ch/shanci.li/?lang=en">Shanci Li</a><span style="opacity:0.7">,</span>
+							<a class="black-text" href="https://people.epfl.ch/iordan.doytchinov?lang=en">Iordan Doytchinov</a><span style="opacity:0.7"></span>
 
-							<br>
-                            <button id="learnmore" class="outline-btn roundedbutton" > <a class="white-text" href="#abstract">Learn more</a>  </button>
+							<br><br>
+							<button id="button_datasets" class="outline-btn roundedbutton" > <a class="black-text" href="#datasets">Datasets</a>  </button>
+							<button id="button_video" class="outline-btn roundedbutton" > <a class="black-text" href="#video">Video</a>  </button>
+							<button id="button_paper" class="outline-btn roundedbutton" > <a class="black-text" href="#paper">Paper</a>  </button>
+							<button id="button_code" class="outline-btn roundedbutton" > <a class="black-text" href="https://github.com/TOPO-EPFL/CrossLoc">Code </a> </button>
+							<button id="button_learn_more" class="outline-btn roundedbutton" > <a class="black-text" href="#abstract">Learn more</a>  </button>
+							<br><br>
+
+
  						</div>
+
 					</div>
 					<!-- /home content -->
 
 				</div>
+
 			</div>
+			<img src="img_crossloc/background.gif" style="width: 100%;">
 		</div>
 		<!-- /home wrapper -->
 
@@ -150,16 +159,34 @@
 	<!-- /Header -->
 
 
+
+
+
 	<!-- Teaser -->
 	<div id="teaser" class="section bg-grey">
-			
 		<!-- Container -->
 		<div class="container">
 			<!-- Row -->
 			<div class="row" style="margin: 0px">
+				<div class="black-text">
+					<h2 style="text-align: center; padding-top: 50px">How to obtain Data and Model for <em>Absolute Visual Navigation </em>?</h2>
+				</div>
 
-                <!-- service -->
-				<div class="col-md-3 col-sm-6">
+				<!-- service -->
+				<div class="col-md-4 col-sm-6">
+					<div class="service smoothscroll" href="#paper">
+						<div class="service-content service-row-1">
+							<i class="fa fa-building"></i>
+							<h3>TOPO-DataGen</h3>
+							<p>Data generation workflow utilizing open source topography data from Swisstopo.</p>
+							<a href="#datagen">Workflow</a>
+						</div>
+					</div>
+				</div>
+				<!-- /service -->
+
+				<!-- service -->
+				<div class="col-md-4 col-sm-6">
 					<div class="service smoothscroll" href="#datasets">
 							<div class="service-content service-row-1">
 							<i class="fa fa-database"></i>
@@ -172,54 +199,25 @@
 				<!-- /service -->
 
 				<!-- service -->
-				<div class="col-md-3 col-sm-6">
-					<div class="service smoothscroll" href="#video">
-						<div class="service-content  service-row-1">
-							<i class="fa fa-video-camera"></i>
-							<h3>Video</h3>
-							<p>Introduction to CrossLoc datasets and the CrossLoc localization algorithms.</p>
-							<a href="#sample">Visualization</a>
+				<div class="col-md-4 col-sm-6">
+					<div class="service smoothscroll" href="#crossloc">
+						<div class="service-content  service-row-1" style="padding-bottom: 0px">
+							<i class="fa fa-gitlab"></i>
+							<h3>CrossLoc</h3>
+							<p>Introduction to CrossLoc localization algorithms.</p>
+								<a href="#crossloc" style="margin-bottom: 0px">Explore</a>
 						</div>
 					</div>
 				</div>
 				<!-- /service -->
 
-				<!-- service -->
-				<div class="col-md-3 col-sm-6">
-					<div class="service smoothscroll" href="#paper">
-						<div class="service-content service-row-1">																		
-							<i class="fa fa-file-text-o"></i>
-							<h3>Paper</h3>
-                            <p>Main paper and the supplementary materials.</p>
-                            <br>
-                            <a href="#paper">PDF</a>
-						</div>
-					</div>
-				</div>
-				<!-- /service -->
-
-				<!-- service -->
-				<div class="col-md-3 col-sm-6">
-					<div class="service smoothscroll" href="https://github.com/TOPO-EPFL/CrossLoc" onclick="window.location.href='https://github.com/TOPO-EPFL/CrossLoc'">
-							<div class="service-content service-row-1">
-							<i class="fa fa-github"></i>
-							<h3>Code</h3>
-                            <p>The code for training and testing the CrossLoc models and baselines.</p>
-							<a href="https://github.com/TOPO-EPFL/CrossLoc">Get started</a>
-						</div>
-					</div>
-				</div>
-				<!-- /service -->
-
-			
 			</div>
 			<!-- /Row -->
 
 		</div>
 		<!-- /Container -->
-	</div>	
+	</div>
 	<!-- /Teaser -->
-
 
 
 	<!-- Abstract -->
@@ -233,7 +231,7 @@
 
 				<!-- Section header -->
 				<div class="section-header text-center">
-					<h2 class="title">Summary</h2>
+					<h2 class="title">Abstract</h2>
                     We present a visual localization system that learns to
                     <strong><u>estimate camera poses in the real world with the help of synthetic data</u></strong>.
 				</div>
@@ -257,153 +255,7 @@
 						</p>
 						</div>
 
-                        Our main contributions are threefold:
-                        <br>
-						<strong>1) <u>TOPO-DataGen</u></strong>: an open-source multimodal synthetic data generation tool tailored to aerial scenes.
-						<br>
-                        It takes common geo-data as inputs and outputs diverse synthetic visual data such as 2D image-3D geometry-semantics-camera pose.
-                        The rendering engine is developed upon <a href="https://cesium.com/platform/cesiumjs/">CesiumJS</a>.
-                        See the <a href="https://github.com/TOPO-EPFL/TOPO-DataGen">TOPO-DataGen code</a> for details and
-                        feel free to try the <a href="https://github.com/TOPO-EPFL/TOPO-DataGen#get-started">demo</a> to generate synthetic data in Genève.
-
-                        <!-- Section header -->
-                        <div class='row'>
-                            <br>
-                            <div class="col-sm-4">
-                            <p>
-                                <strong>TOPO-DataGen is generically useful for enhancing aerial visual localization networks.</strong>
-                                The proposed data generation workflow outputs both 2D RGB images and the associated 3D labels such as the pixel-wise
-                                scene coordinates.
-                                It has the following advantages:
-                                <br>
-                                <i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
-                                Obtaining dense and accurate <strong>2D-3D correspondences</strong> without much engineering efforts, unlike the structure-from-motion.
-                                <br>
-                                <i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
-                                Seamless <strong>traversing between the real and virtual world</strong> hinged on the camera viewpoint.
-                                <br>
-                                <i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
-                                Work for both <strong>image-based methods</strong> such as absolute pose regression and <strong>structure-based methods</strong> that require 3D labels.
-                            </p>
-                            </div>
-
-                            <div class="col-sm-8">
-                            <p>
-                                <img width="100%" src="./img_crossloc/topo-datagen_output_sample.png" alt="" class="center">
-                            </p>
-                            </div>
-
-                            <div class="col-sm-12">
-                                The TOPO-DataGen workflow can be used to improve the training of most visual localization networks,
-                                including both the image-based methods (by cross-domain data augmentation) and the structure-based methods (by multi-modal visual data and cross-modal representations).
-                            </div>
-                        </div>
-
-                        <br> <br>
-						<strong>2) <u> CrossLoc localization</u></strong>: a cross-modal visual representation learning method via self-supervision for absolute localization.
-						<br>
-                        The CrossLoc learns to localize the query image by predicting its scene coordinates using a set of cross-modal encoders, followed by camera pose estimation using a PnP solver.
-                        Similar to self-supervised learning, it leverages data structure to create additional supervisory signals to enhance learning.
-
-                        Specifically, it makes use of the <em>coordinate-depth-normal geometric hierarchy</em> for self-supervision:
-                        from the 3D scene coordinate labels, one could compute accurate 6D camera pose and subsequently compute
-                        the depth and surface normals <em>without any external labels</em>.
-                        It's observed that the tasks of coordinate-depth-normal regression are geometrically highly related. The aggregated cross-modal representations
-                        could be used to enhance the final task of coordinate regression.
-                        <br>
-                        See the <a href="https://github.com/TOPO-EPFL/CrossLoc">CrossLoc localization code</a> for training code, pretrained models, and baseline implementations.
-
-
-                        <div id="datasets">
-                        <br>
-                        <br>
-						<strong>3) <u>CrossLoc Benchmark Datasets</u></strong>: large-scale benchmark datasets for sim-to-real visual localization,
-                        including synthetic and real images with 3D and semantic labels on urban and natural sites.
-                        <br>
-                        <!-- Row -->
-                            <!-- service-static -->
-                            <div class="col-md-3 col-sm-6">
-                                <div class="service-static">
-                                        <div class="service-content">
-                                        <i class="fa fa-paint-brush" style="font-size: 2.73em; text-align: center"></i>
-                                        <div class="number">
-                                            <h2 class="value">50k+</h2>
-			                            </div>
-                                        <h3>Synthetic Images</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /service-static -->
-
-                            <!-- service-static -->
-                            <div class="col-md-3 col-sm-6">
-                                <div class="service-static">
-                                        <div class="service-content">
-                                        <i class="fa fa-camera" style="font-size: 2.73em; text-align: center"></i>
-                                        <div class="number">
-                                            <h2 class="value">7k+</h2>
-			                            </div>
-                                        <h3>Real Images</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /service-static -->
-
-                            <!-- service-static -->
-                            <div class="col-md-3 col-sm-6">
-                                <div class="service-static">
-                                        <div class="service-content">
-                                        <i class="fa fa-area-chart" style="font-size: 2.73em; text-align: center"></i>
-                                        <div class="number">
-                                            <h2 class="value">270</h2>
-			                            </div>
-                                        <h3>Hectares</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /service-static -->
-
-                            <!-- service-static -->
-                            <div class="col-md-3 col-sm-6">
-                                <div class="service-static">
-                                        <div class="service-content">
-                                        <i class="fa fa-cogs" style="font-size: 2.73em; text-align: center"></i>
-                                        <div class="number">
-                                            <h2 class="value">6+</h2>
-			                            </div>
-                                        <h3>Modalities</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /service-static -->
-                        </div>
-                        <!-- /Row -->
-
-                        </p>
-                        <div class="figure" style="text-align:center;">
-                            <h4 class="">(Note: quality may be compromised due to GIF compression)</h4>
-                            <img width="75%" src="img_crossloc/urbanscape_sample.gif"></img>
-                        </div>
-                        We introduce two large-scale sim-to-real benchmark datasets to exemplify the utility of the <strong><u>TOPO-DataGen</u></strong>.
-                        Please visit the <a href="https://doi.org/10.5061/dryad.mgqnk991c">CrossLoc Benchmark Datasets</a> page hosted by Drayd for download.
-                        See the <a href="https://github.com/TOPO-EPFL/CrossLoc-Benchmark-Datasets">GitHub repo</a> for other dataset details and how to setup.
-                        <br>
-                        <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
-                        All 7k+ real images are <strong>accurately geo-referenced</strong> using a professional drone, numerous ground control points, and a GNSS base.
-                        <br>
-                        <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
-                        All real images have matching synthetic RGB images with a validated positioning accuracy at <strong>cm-level</strong>.
-                        <br>
-                        <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
-                        Most generated 3D labels have a reprojection error of no more than <strong>2 pixels</strong>.
-                        <br>
-                        <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
-                        All synthetic data is created using the <strong>fully open-sourced geo-data</strong> from the Swiss government <a href="https://www.swisstopo.admin.ch/en/geodata.html">swisstopo</a>.
-                        The semantic maps are also generated.
-                        <br>
-                        <i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
-                        Carefully calibrated camera intrinsic parameters and the 6D camera poses are provided.
-                        </div>
+<!--                        Our main contributions are threefold:-->
 				</div>
 			</div>
 			<!-- /Row -->
@@ -413,7 +265,219 @@
 
 	<!-- /Summary -->
 
-    <!-- Sample Results -->
+	<!-- TOPO-DataGen -->
+	<div id="datagen" class="section sm-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">TOPO-DataGen</h2>
+					An open-source multimodal synthetic data generation tool tailored to aerial scenes.
+				</div>
+
+				It takes common geo-data as inputs and outputs diverse synthetic visual data such as 2D image-3D geometry-semantics-camera pose.
+				The rendering engine is developed upon <a href="https://cesium.com/platform/cesiumjs/">CesiumJS</a>.
+				See the <a href="https://github.com/TOPO-EPFL/TOPO-DataGen">TOPO-DataGen code</a> for details and
+				feel free to try the <a href="https://github.com/TOPO-EPFL/TOPO-DataGen#get-started">demo</a> to generate synthetic data in Genève.
+
+				<!-- /Section header -->
+				<div class="abstract-body col-md-12">
+
+					<!-- Section header -->
+					<div class='row'>
+						<br>
+						<div class="col-sm-4">
+							<p>
+								<strong>TOPO-DataGen is generically useful for enhancing aerial visual localization networks.</strong>
+								The proposed data generation workflow outputs both 2D RGB images and the associated 3D labels such as the pixel-wise
+								scene coordinates.
+								It has the following advantages:
+								<br>
+								<i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
+								Obtaining dense and accurate <strong>2D-3D correspondences</strong> without much engineering efforts, unlike the structure-from-motion.
+								<br>
+								<i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
+								Seamless <strong>traversing between the real and virtual world</strong> hinged on the camera viewpoint.
+								<br>
+								<i class="fa fa-thumbs-o-up" style="font-size: 1.50em; text-align: left"></i>
+								Work for both <strong>image-based methods</strong> such as absolute pose regression and <strong>structure-based methods</strong> that require 3D labels.
+							</p>
+						</div>
+
+						<div class="col-sm-8">
+							<p>
+								<img width="100%" src="./img_crossloc/topo-datagen_output_sample.png" alt="" class="center">
+							</p>
+						</div>
+
+						<div class="col-sm-12">
+							The TOPO-DataGen workflow can be used to improve the training of most visual localization networks,
+							including both the image-based methods (by cross-domain data augmentation) and the structure-based methods (by multi-modal visual data and cross-modal representations).
+						</div>
+					</div>
+					</p>
+					<div class="figure" style="text-align:center;">
+						<h4 class="">(Note: quality may be compromised due to GIF compression)</h4>
+						<img width="75%" src="img_crossloc/urbanscape_sample.gif"></img>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Row -->
+	</div>
+	<!-- /Container -->
+	</div>
+
+
+
+	<!-- CrossLoc Benchmark Datasets -->
+	<div id="datasets" class="section sm-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">CrossLoc Benchmark Datasets</h2>
+					large-scale benchmark datasets for sim-to-real visual localization,<br>
+					including synthetic and real images with 3D and semantic labels on urban and natural sites.
+				</div>
+
+				<br>
+				<!-- Row -->
+				<!-- service-static -->
+				<div class="col-md-3 col-sm-6">
+					<div class="service-static">
+						<div class="service-content">
+							<i class="fa fa-paint-brush" style="font-size: 2.73em; text-align: center"></i>
+							<div class="number">
+								<h2 class="value">50k+</h2>
+							</div>
+							<h3>Synthetic Images</h3>
+						</div>
+					</div>
+				</div>
+				<!-- /service-static -->
+
+				<!-- service-static -->
+				<div class="col-md-3 col-sm-6">
+					<div class="service-static">
+						<div class="service-content">
+							<i class="fa fa-camera" style="font-size: 2.73em; text-align: center"></i>
+							<div class="number">
+								<h2 class="value">7k+</h2>
+							</div>
+							<h3>Real Images</h3>
+						</div>
+					</div>
+				</div>
+				<!-- /service-static -->
+
+				<!-- service-static -->
+				<div class="col-md-3 col-sm-6">
+					<div class="service-static">
+						<div class="service-content">
+							<i class="fa fa-area-chart" style="font-size: 2.73em; text-align: center"></i>
+							<div class="number">
+								<h2 class="value">270</h2>
+							</div>
+							<h3>Hectares</h3>
+						</div>
+					</div>
+				</div>
+				<!-- /service-static -->
+
+				<!-- service-static -->
+				<div class="col-md-3 col-sm-6">
+					<div class="service-static">
+						<div class="service-content">
+							<i class="fa fa-cogs" style="font-size: 2.73em; text-align: center"></i>
+							<div class="number">
+								<h2 class="value">6+</h2>
+							</div>
+							<h3>Modalities</h3>
+						</div>
+					</div>
+				</div>
+				<!-- /service-static -->
+			</div>
+			<!-- /Row -->
+
+			<div class="figure" style="text-align:center;">
+				<h4 class="">(Note: quality may be compromised due to GIF compression)</h4>
+				<img width="75%" src="img_crossloc/urbanscape_sample.gif"></img>
+			</div>
+			We introduce two large-scale sim-to-real benchmark datasets to exemplify the utility of the <strong><u>TOPO-DataGen</u></strong>.
+			Please visit the <a href="https://doi.org/10.5061/dryad.mgqnk991c">CrossLoc Benchmark Datasets</a> page hosted by Drayd for download.
+			See the <a href="https://github.com/TOPO-EPFL/CrossLoc-Benchmark-Datasets">GitHub repo</a> for other dataset details and how to setup.
+			<br>
+			<i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
+			All 7k+ real images are <strong>accurately geo-referenced</strong> using a professional drone, numerous ground control points, and a GNSS base.
+			<br>
+			<i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
+			All real images have matching synthetic RGB images with a validated positioning accuracy at <strong>cm-level</strong>.
+			<br>
+			<i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
+			Most generated 3D labels have a reprojection error of no more than <strong>2 pixels</strong>.
+			<br>
+			<i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
+			All synthetic data is created using the <strong>fully open-sourced geo-data</strong> from the Swiss government <a href="https://www.swisstopo.admin.ch/en/geodata.html">swisstopo</a>.
+			The semantic maps are also generated.
+			<br>
+			<i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
+			Carefully calibrated camera intrinsic parameters and the 6D camera poses are provided.
+		</div>
+		<!-- /Row -->
+	</div>
+	<!-- /Container -->
+	</div>
+
+
+
+	<!-- CrossLoc localization -->
+	<div id="crossloc" class="section sm-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">CrossLoc localization</h2>
+					A cross-modal visual representation learning method via self-supervision for absolute localization.
+				</div>
+
+				<br>
+				The CrossLoc learns to localize the query image by predicting its scene coordinates using a set of cross-modal encoders, followed by camera pose estimation using a PnP solver.
+				Similar to self-supervised learning, it leverages data structure to create additional supervisory signals to enhance learning.
+
+				Specifically, it makes use of the <em>coordinate-depth-normal geometric hierarchy</em> for self-supervision:
+				from the 3D scene coordinate labels, one could compute accurate 6D camera pose and subsequently compute
+				the depth and surface normals <em>without any external labels</em>.
+				It's observed that the tasks of coordinate-depth-normal regression are geometrically highly related. The aggregated cross-modal representations
+				could be used to enhance the final task of coordinate regression.
+				<br>
+				See the <a href="https://github.com/TOPO-EPFL/CrossLoc">CrossLoc localization code</a> for training code, pretrained models, and baseline implementations.
+
+			</div>
+		</div>
+		<!-- /Row -->
+	</div>
+	<!-- /Container -->
+	</div>
+
+
+	<!-- Sample Results -->
 	<div id="video" class="section sm-padding">
 
 		<!-- Container -->
