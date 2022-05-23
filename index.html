@@ -97,10 +97,11 @@
 				<!--  Main navigation  -->
 				<ul class="main-nav nav navbar-nav navbar-right">
 					<li><a href="#home">Home</a></li>
-                    <li><a href="#abstract">abstract</a></li>
-                    <li><a href="#datasets">Datasets</a></li>
-                    <li><a href="#video">Video</a></li>
-                    <li><a href="#paper">Paper</a></li>
+					<li><a href="#teaser">Contributions </a></li>
+                    <li><a href="#abstract">Abstract</a></li>
+<!--                    <li><a href="#datasets">Datasets</a></li>-->
+<!--                    <li><a href="#video">Video</a></li>-->
+<!--                    <li><a href="#paper">Paper</a></li>-->
 					<li><a href="https://github.com/TOPO-EPFL/CrossLoc">Code</a></li>
 					<li><a href="#team">Team</a></li>
 					<!-- <li class="has-dropdown"><a href="#blog">Blog</a> -->
@@ -122,7 +123,7 @@
 				<div class="row">
 
 					<!-- home content -->
-					<div class="col-md-10 col-md-offset-1">
+					<div class="container">
 						<div class="home-content">
 							<br><br><br><br><br><br><br><br>
 							<h2 class="black-text">CrossLoc: Scalable Aerial Localization Assisted by Multimodal Synthetic Data</h2><br>
@@ -135,7 +136,7 @@
 							<a class="black-text" href="https://people.epfl.ch/iordan.doytchinov?lang=en">Iordan Doytchinov</a><span style="opacity:0.7"></span>
 
 							<br><br>
-							<br><br>
+							<br>
 
 
  						</div>
@@ -231,6 +232,9 @@
                     We present a visual localization system that learns to
                     <strong><u>estimate camera poses in the real world with the help of synthetic data</u></strong>.
 				</div>
+				<div class="cvpr-container">
+					<iframe class="cvpr-oral" src="https://www.youtube.com/embed/pytRRXPFqFE" frameBorder="0" allow="autoplay; encrypted-media" allowfullscreen style="text-align: center"></iframe>
+				</div>
 
                 Despite significant progress in recent years, most learning-based approaches to visual localization target at a single domain and require a dense database of geo-tagged images to function well.
                 To mitigate the data scarcity issue and improve the scalability of the neural localization models, we introduce <u><strong>TOPO-DataGen</strong></u>, a versatile synthetic data generation tool that traverses smoothly between the real and virtual world, hinged on the geographic camera viewpoint.
@@ -239,20 +243,6 @@
                 Furthermore, we introduce <u><strong>CrossLoc</strong></u>, a cross-modal visual representation learning approach to pose estimation that makes full use of the scene coordinate ground truth via self-supervision.
                 Without any extra data, CrossLoc significantly outperforms the state-of-the-art methods and achieves substantially higher real-data sample efficiency.
 
-				<!-- /Section header -->
-				<div class="abstract-body col-md-12">
-					<p> 
-						<div class="figure row">
-						<img width="80%" src="./img_crossloc/pull_figure.png" alt="" class="center">
-						<p class='col-sm-10 col-sm-offset-1' style='text-align: justify;'>
-                            <strong>Left.</strong> The proposed <u><strong>TOPO-DataGen</strong></u> workflow generates multimodal synthetic datasets over large scales using off-the-shelf geodata.
-                            <strong>Right.</strong> We present <u><strong>CrossLoc</strong></u>, a cross-modal visual representation learning method for absolute localization.
-                            It learns to predict scene coordinates via self-supervised geometric tasks and external labels such as semantics if available.
-						</p>
-						</div>
-
-<!--                        Our main contributions are threefold:-->
-				</div>
 			</div>
 			<!-- /Row -->
 		</div>
@@ -275,6 +265,10 @@
 					<h2 class="title">TOPO-DataGen</h2>
 					An open-source multimodal synthetic data generation tool tailored to aerial scenes.
 				</div>
+				<div class="figure" style="text-align:center;margin-top: 0px">
+					<img width=60% src="img_crossloc/TOPO-datagen.png">
+				</div>
+
 
 				It takes common geo-data as inputs and outputs diverse synthetic visual data such as 2D image-3D geometry-semantics-camera pose.
 				The rendering engine is developed upon <a href="https://cesium.com/platform/cesiumjs/">CesiumJS</a>.
@@ -317,10 +311,6 @@
 						</div>
 					</div>
 					</p>
-					<div class="figure" style="text-align:center;">
-						<h4 class="">(Note: quality may be compromised due to GIF compression)</h4>
-						<img width="75%" src="img_crossloc/urbanscape_sample.gif"></img>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -407,10 +397,7 @@
 			</div>
 			<!-- /Row -->
 
-			<div class="figure" style="text-align:center;">
-				<h4 class="">(Note: quality may be compromised due to GIF compression)</h4>
-				<img width="75%" src="img_crossloc/urbanscape_sample.gif"></img>
-			</div>
+
 			We introduce two large-scale sim-to-real benchmark datasets to exemplify the utility of the <strong><u>TOPO-DataGen</u></strong>.
 			Please visit the <a href="https://doi.org/10.5061/dryad.mgqnk991c">CrossLoc Benchmark Datasets</a> page hosted by Drayd for download.
 			See the <a href="https://github.com/TOPO-EPFL/CrossLoc-Benchmark-Datasets">GitHub repo</a> for other dataset details and how to setup.
@@ -430,6 +417,10 @@
 			<br>
 			<i class="fa fa-check-circle-o" style="font-size: 1.50em; text-align: left"></i>
 			Carefully calibrated camera intrinsic parameters and the 6D camera poses are provided.
+		</div>
+		<div class="figure" style="text-align:center;">
+			<h4 class="">(Note: quality may be compromised due to GIF compression)</h4>
+			<img width=50% src="img_crossloc/urbanscape_sample.gif">
 		</div>
 		<!-- /Row -->
 	</div>
@@ -453,7 +444,8 @@
 					A cross-modal visual representation learning method via self-supervision for absolute localization.
 				</div>
 
-				<br>
+				<img width="100%" src="img_crossloc/CrossLoc.gif">
+
 				The CrossLoc learns to localize the query image by predicting its scene coordinates using a set of cross-modal encoders, followed by camera pose estimation using a PnP solver.
 				Similar to self-supervised learning, it leverages data structure to create additional supervisory signals to enhance learning.
 
@@ -463,7 +455,11 @@
 				It's observed that the tasks of coordinate-depth-normal regression are geometrically highly related. The aggregated cross-modal representations
 				could be used to enhance the final task of coordinate regression.
 				<br>
+				<br>
+
 				See the <a href="https://github.com/TOPO-EPFL/CrossLoc">CrossLoc localization code</a> for training code, pretrained models, and baseline implementations.
+				<br>
+				<br>
 
 			</div>
 		</div>
@@ -473,35 +469,7 @@
 	</div>
 
 
-	<!-- Sample Results -->
-	<div id="video" class="section sm-padding">
 
-		<!-- Container -->
-		<div class="container">
-
-			<!-- Row -->
-			<div class="row">
-
-				<!-- Section header -->
-				<div class="section-header text-center">
-					<h2 class="title">Video</h2>
-				</div>
-				
-				<!-- /Section header -->
-				<div class="col-md-11 col-md-offset-0">
-			        <div class="cvpr-container">
-			            <iframe class="cvpr-oral" src="https://www.youtube.com/embed/pytRRXPFqFE" frameBorder="0" allow="autoplay; encrypted-media" allowfullscreen style="text-align: center"></iframe>
-			        </div>
-				</div>
-
-			</div> 
-			<!-- /Row -->
-
-		</div>
-		<!-- /Container -->
-
-	</div>
-	<!-- /Sample Results -->
 
 	<!-- Paper -->
 	<div id="paper" class="section sm-padding bg-grey">
@@ -728,7 +696,7 @@
 					<!-- footer follow -->
 					<ul class="footer-follow">
 						<li><a href="https://github.com/TOPO-EPFL/CrossLoc"><i class="fa fa-github"></i></a></li>
- 
+
 					</ul>
 					<!-- /footer follow -->
 

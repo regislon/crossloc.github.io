@@ -50,7 +50,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     overflow-x: hidden;
-    color: #868F9B;
+    color: #10161A;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -66,15 +66,15 @@ h1 {
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 40px;
 }
 
 h3 {
-    font-size: 21px;
+    font-size: 30px;
 }
 
 h4 {
-    font-size: 18px;
+    font-size: 25px;
 }
 
 h5 {
@@ -124,6 +124,7 @@ a.white-text:hover, a.white-text:focus {
 
 a.black-text {
     color: #000000;
+    font-size: larger;
     /*opacity: 0.7;*/
     text-decoration: none;
     -webkit-transition: 0.2s opacity;
@@ -212,7 +213,7 @@ ul, ol {
 
 .section-header {
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: auto;
 }
 
 .section-header .title {
@@ -326,6 +327,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .navbar-brand .logo-text {
+    font-size: 30px;
     color: #FFFFFF;
     float:left;
     margin-right: 10px;
@@ -408,7 +410,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         padding: 0px 15px;
     }
     .main-nav li a {
-        font-size: 14px;
+        font-size: 20px;
         -webkit-transition: 0.2s color;
         transition: 0.2s color;
     }
@@ -547,6 +549,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         border-top: 1px solid rgba(250, 250, 250, 0.1);
     }
     .main-nav li a {
+        font-size: 72px;
         display: block;
         color: #000000;
         -webkit-transition: 0.2s all;
